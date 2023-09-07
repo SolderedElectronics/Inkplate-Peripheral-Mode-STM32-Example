@@ -3,10 +3,13 @@
 This repository contains an example STM32CubeIDE project for driving any Inkplate board using peripheral mode.
 The project was made for the development board NUCLEO-F410RB which contains the STM32F410RBT6, but the principle is essentially the same on all STM microcontrollers.
 
+If you just wish to check the relevant code, have a look at `Core\Src\main.c` and search for `USER CODE BEGIN 2`.
+
 To get started, you will need:
 - Your Inkplate
 - A STM32 which you can program
 - A single wire to connect STM32 and Inkplate
+- USB cables for both the STM32 and Inkplate
 
 ### What is peripheral mode?
 
@@ -19,7 +22,7 @@ Peripheral mode lets the user run commands from the Inkplate library via UART. T
 To use peripheral mode with STM32, follow these steps:
 1. Upload peripheral mode to your Inkplate device using Arduino IDE. In the Inkplate Library, it's under the _Diagnostics_ subfolder in the examples for your particular board.
 2. Open STM32CubeIDE and create a new your project for your particular board. Create a UART hardware device in asynchronous mode, set at 115200 baud. 8 bits, 1 stop bit.
-3. Connect the TX pin of that hardware UART device to Inkplate's RX pin. Inkplate also needs to be power supplied via USB.
+3. Connect the TX pin of your hardware UART device to Inkplate's RX pin. Inkplate also needs to be power supplied via USB.
 4. Upload main.c to your STM32 board check if the screen refreshes and displays a message.
 
 ### What are the available commands?
